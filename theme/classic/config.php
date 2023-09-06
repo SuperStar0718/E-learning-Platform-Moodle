@@ -177,3 +177,5 @@ $THEME->scss = function($theme) {
 $THEME->usefallback = true;
 $THEME->iconsystem = '\\theme_classic\\output\\icon_system_fontawesome';
 $THEME->haseditswitch = false;
+
+$THEME->javascript = array('script');
