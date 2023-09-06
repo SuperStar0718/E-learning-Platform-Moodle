@@ -55,7 +55,7 @@ class course_edit_form extends moodleform {
         $mform->setType('returnurl', PARAM_LOCALURL);
         $mform->setConstant('returnurl', $returnurl);
 
-        $mform->addElement('text','fullname', get_string('fullnamecourse'),'maxlength="254" size="50"');
+        $mform->addElement('text','fullname', 'Course Title','maxlength="254" size="50"');
         $mform->addHelpButton('fullname', 'fullnamecourse');
         $mform->addRule('fullname', get_string('missingfullname'), 'required', null, 'client');
         $mform->setType('fullname', PARAM_TEXT);
@@ -64,7 +64,7 @@ class course_edit_form extends moodleform {
             $mform->setConstant('fullname', $course->fullname);
         }
 
-        $mform->addElement('text', 'shortname', get_string('shortnamecourse'), 'maxlength="100" size="20"');
+        $mform->addElement('text', 'shortname', 'Course Description', 'maxlength="254" size="50"');
         $mform->addHelpButton('shortname', 'shortnamecourse');
         $mform->addRule('shortname', get_string('missingshortname'), 'required', null, 'client');
         $mform->setType('shortname', PARAM_TEXT);
@@ -181,7 +181,10 @@ class course_edit_form extends moodleform {
             $mform->hardFreeze('idnumber');
             $mform->setConstants('idnumber', $course->idnumber);
         }
-
+        $buttonarray = array();
+        $buttonarray[] = $mform->createElement('button', 'Record Audio', 'Record Audio');
+        $buttonarray[] = $mform->createElement('button', 'Record Video', 'Record Video');
+        $mform->addGroup($buttonarray, 'filterbuttons', '', array(' '), false);
         // Description.
         $mform->addElement('header', 'descriptionhdr', get_string('description'));
         $mform->setExpanded('descriptionhdr');

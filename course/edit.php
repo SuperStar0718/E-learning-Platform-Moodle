@@ -243,7 +243,7 @@ if (!empty($course->id)) {
 $PAGE->set_title($title);
 $PAGE->add_body_class('limitedwidth');
 $PAGE->set_heading($fullname);
-
+$PAGE->requires->jquery();
 echo $OUTPUT->header();
 echo $OUTPUT->heading($pagedesc);
 

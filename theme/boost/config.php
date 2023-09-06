@@ -184,3 +184,5 @@ $THEME->usescourseindex = true;
 $THEME->activityheaderconfig = [
     'notitle' => true
 ];
+
+$THEME->javascripts_footer = array('script');
