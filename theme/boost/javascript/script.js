@@ -4,4 +4,5 @@ $('#id_RecordAudio').click(function(){
 
 $('#id_RecordVideo').click(function(){
     $("button[aria-label='Record video']").click();
+    
 })
